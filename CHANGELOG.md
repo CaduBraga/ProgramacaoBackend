@@ -5,6 +5,31 @@ Todas as mudanças notáveis neste projeto serão documentadas neste arquivo.
 O formato é baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.0/),
 e este projeto adere ao [Versionamento Semântico](https://semver.org/lang/pt-BR/).
 
+## [2.0.0] - 2025-01-05
+
+### Adicionado
+- **Sistema de Logística de Entregas**: Sistema completo para gestão de entregas de e-commerce
+  - Cadastro de clientes, motoristas, pedidos e entregas
+  - Gestão de histórico de entregas com eventos
+  - 16 funcionalidades completas incluindo relatórios analíticos
+  - Validações de dependência para exclusões
+  - Arquitetura em camadas (Model, DAO, Service, View)
+  - Relatórios avançados com JOINs e GROUP BY
+  - Interface de usuário interativa completa
+
+- **Sistema de Lista Telefônica**: Sistema simples para gerenciamento de contatos
+  - CRUD completo de contatos (Nome, Telefone, Email, Observação)
+  - Busca por nome com filtros
+  - Interface de usuário via console
+  - Estrutura em camadas (model, dao, util, app)
+  - Padrão POO implementado
+
+- **Estrutura de Projetos Organizada**:
+  - Separação clara entre os três sistemas
+  - Documentação individual para cada projeto
+  - Scripts SQL específicos para cada sistema
+  - Configurações Maven independentes
+
 ## [1.0.0] - 2024-12-19
 
 ### Adicionado
@@ -48,18 +73,18 @@ e este projeto adere ao [Versionamento Semântico](https://semver.org/lang/pt-BR
   - Suporte ao MySQL Connector/J 8.0.33
 
 ### Características
+- **Sistema de Logística**: Arquitetura em camadas, relatórios avançados, validações de negócio
+- **Sistema de Lista Telefônica**: Padrão POO, CRUD simples, interface intuitiva
+- **CRUD-JDBC**: PreparedStatement, padrão MVC, exercícios práticos
 - Implementação completa de JDBC com Java
-- Padrão MVC (Model-View-Controller)
-- Operações CRUD completas
-- Interface de usuário interativa
+- Interface de usuário interativa para todos os sistemas
 - Tratamento de exceções robusto
-- Uso de PreparedStatement para segurança
 - Código modular e bem documentado
 
 ### Tecnologias
-- Java 22
+- Java 11+
 - Maven 3.6+
-- MySQL Server
+- MySQL Server 8.0+
 - MySQL Connector/J 8.0.33
 - JDBC API
 

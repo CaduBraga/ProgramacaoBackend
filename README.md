@@ -1,135 +1,222 @@
-# CRUD-JDBC com PreparedStatement
+# Programação Backend - Projetos Java + JDBC
 
-Sistema CRUD completo em Java utilizando JDBC com PreparedStatement para operações seguras no banco de dados.
+Repositório contendo projetos práticos de programação backend em Java utilizando JDBC, Maven e MySQL.
 
-## Funcionalidades Implementadas
+## Projetos Implementados
 
-### Sistema CRUD Principal
-- **Create**: Inserir registros nas tabelas
-- **Read**: Visualizar registros das tabelas
-- **Update**: Atualizar registros existentes
-- **Delete**: Remover registros das tabelas
+### 1. Sistema de Logística de Entregas 🚚
+Sistema completo para gestão de entregas de e-commerce com funcionalidades avançadas de relatórios e análise.
 
-### Exercícios Práticos com PreparedStatement
+**Funcionalidades:**
+- Cadastro de clientes, motoristas, pedidos e entregas
+- Gestão de histórico de entregas
+- 16 funcionalidades completas incluindo relatórios analíticos
+- Validações de dependência para exclusões
+- Interface de usuário interativa
 
-#### Exercícios de Atualização (UPDATE)
-1. **Exercício 6**: Atualizar curso de um aluno com base na matrícula
-2. **Exercício 7**: Atualizar preço de um produto com base no nome
-3. **Exercício 8**: Atualizar valor total de um pedido com base no ID
-4. **Exercício 9**: Atualizar autor de um livro com base no título
-5. **Exercício 10**: Atualizar salário de um funcionário com base no nome
+### 2. Sistema de Lista Telefônica 📞
+Sistema simples para gerenciamento de contatos telefônicos seguindo padrões de POO.
 
-#### Exercícios de Deleção (DELETE)
-6. **Exercício 11**: Deletar aluno com base na matrícula
-7. **Exercício 12**: Deletar produto com base no nome
-8. **Exercício 13**: Deletar pedido com base no ID
-9. **Exercício 14**: Deletar livro com base no título
-10. **Exercício 15**: Deletar funcionário com base no nome
+**Funcionalidades:**
+- CRUD completo de contatos
+- Busca por nome
+- Interface de usuário via console
+- Estrutura em camadas (model, dao, util, app)
 
-#### Atividades Práticas com SELECT
-11. **Atividade 1**: Listar todos os usuários
-12. **Atividade 2**: Buscar um usuário por ID
-13. **Atividade 3**: Exibir usuários com emails de um domínio específico
-14. **Atividade 4**: Contar quantos usuários estão cadastrados
+### 3. CRUD-JDBC com PreparedStatement 💾
+Sistema CRUD completo com exercícios práticos de JDBC.
 
-## Estrutura do Projeto
+**Funcionalidades:**
+- Operações CRUD para 6 tabelas diferentes
+- Exercícios práticos com PreparedStatement
+- Padrão MVC implementado
+- Interface de usuário interativa
 
+## Estrutura dos Projetos
+
+### Sistema de Logística de Entregas
 ```
-src/main/java/org/example/
-├── config/
-│   └── Conexao.java          # Configuração de conexão com banco
-├── main/
-│   ├── Main.java             # Classe principal com menu de opções
-│   └── ExerciciosPraticos.java # Demonstração dos exercícios
-├── service/
-│   ├── Create.java           # Operações de criação
-│   ├── Read.java             # Operações de leitura
-│   ├── Update.java           # Operações de atualização
-│   ├── Delete.java           # Operações de deleção
-│   ├── Gerenciamento.java    # Gerenciador principal
-│   └── dao/                  # Data Access Objects
-│       ├── AlunoDAO.java
-│       ├── FuncionariosDAO.java
-│       ├── LivrosDAO.java
-│       ├── PedidosDAO.java
-│       ├── ProdutosDAO.java
-│       └── UsuarioDAO.java
-└── view/
-    └── MainView.java         # Interface de usuário
+Sistema de logística e entregas/
+├── src/main/java/com/logistica/
+│   ├── config/          # DatabaseConfig
+│   ├── model/           # Entidades (Cliente, Motorista, Pedido, etc.)
+│   ├── dao/             # Data Access Objects
+│   ├── service/         # Lógica de negócio
+│   ├── view/            # Interface do usuário
+│   └── Main.java        # Classe principal
+├── src/main/resources/schema.sql
+└── pom.xml
 ```
 
-## Como Executar
+### Sistema de Lista Telefônica
+```
+Lista telefônica/
+├── src/main/java/com/lista/
+│   ├── model/           # Contato
+│   ├── dao/             # ContatoDAO
+│   ├── util/            # ConnectionFactory
+│   └── app/             # Main
+├── schema.sql
+└── pom.xml
+```
 
-### 1. Configuração do Banco
-- Execute o script `resources/db/database.sql` no seu banco MySQL
-- Configure a conexão em `src/main/java/org/example/config/Conexao.java`
+### CRUD-JDBC com PreparedStatement
+```
+CRUD - JDBC/
+├── src/main/java/org/example/
+│   ├── config/          # Conexao
+│   ├── main/            # Main e ExerciciosPraticos
+│   ├── service/         # Operações CRUD
+│   └── view/            # Interface do usuário
+└── schema.sql
+```
 
-### 2. Compilação e Execução
+## 🚀 Início Rápido
+
+### Execução Automatizada
+Use os scripts fornecidos para facilitar a execução:
+
+**Windows:**
+```cmd
+run.bat
+```
+
+**Linux/macOS:**
 ```bash
-# Compilar o projeto
-mvn compile
+chmod +x run.sh
+./run.sh
+```
 
-# Executar
+### Execução Manual
+
+#### Sistema de Logística de Entregas
+```bash
+cd "Sistema de logística e entregas"
+mvn clean compile
+mvn exec:java
+```
+
+#### Sistema de Lista Telefônica
+```bash
+cd "Lista telefônica"
+mvn clean compile
+mvn exec:java
+```
+
+#### CRUD-JDBC com PreparedStatement
+```bash
+cd "CRUD - JDBC"
+mvn clean compile
 mvn exec:java -Dexec.mainClass="org.example.main.Main"
 ```
 
-### 3. Menu Principal
-Ao executar, você verá:
-```
-=== SISTEMA CRUD-JDBC ===
-Escolha uma opção:
-1. Sistema CRUD Principal
-2. Exercícios Práticos com PreparedStatement
-```
+### Documentação Detalhada
+- 📋 **[INDEX.md](INDEX.md)** - Índice completo de projetos
+- 🛠️ **[INSTALL.md](INSTALL.md)** - Guia de instalação e configuração
+- 📝 **[CHANGELOG.md](CHANGELOG.md)** - Histórico de mudanças
+
+## Configuração do Banco de Dados
+
+### MySQL Setup
+1. Instale o MySQL Server 8.0+
+2. Execute os scripts SQL fornecidos em cada projeto
+3. Configure as credenciais de conexão nos arquivos de configuração
+
+### Scripts SQL
+- **Logística**: `Sistema de logística e entregas/src/main/resources/schema.sql`
+- **Lista Telefônica**: `Lista telefônica/schema.sql`
+- **CRUD-JDBC**: `CRUD - JDBC/schema.sql`
 
 ## Exemplos de Uso
 
-### Atualizar Email de Usuário
+### Sistema de Logística - Cadastrar Cliente
+```java
+ClienteService clienteService = new ClienteService();
+Cliente cliente = new Cliente("João Silva", "123.456.789-00", 
+    "Rua das Flores, 123", "São Paulo", "SP");
+Long id = clienteService.cadastrarCliente(cliente);
+```
+
+### Sistema de Lista Telefônica - Buscar Contato
+```java
+ContatoDAO contatoDAO = new ContatoDAO();
+List<Contato> contatos = contatoDAO.buscarTodosPorNome("João");
+```
+
+### CRUD-JDBC - Atualizar Usuário
 ```java
 UsuarioDAO usuarioDAO = new UsuarioDAO();
 boolean sucesso = usuarioDAO.atualizarEmail("Ana Souza", "ana.nova@email.com");
 ```
 
-### Deletar Produto por Nome
-```java
-ProdutosDAO produtosDAO = new ProdutosDAO();
-boolean sucesso = produtosDAO.deletarProduto("Produto A");
+## Características dos Projetos
+
+### Sistema de Logística de Entregas
+- **Arquitetura em Camadas**: Model, DAO, Service, View
+- **Relatórios Avançados**: JOINs, GROUP BY, filtros complexos
+- **Validações de Negócio**: Dependências entre entidades
+- **Interface Completa**: 16 funcionalidades implementadas
+- **Tratamento de Erros**: Validações robustas e mensagens informativas
+
+### Sistema de Lista Telefônica
+- **Padrão POO**: Encapsulamento, herança, polimorfismo
+- **CRUD Completo**: Create, Read, Update, Delete
+- **Estrutura Simples**: Fácil de entender e modificar
+- **Interface Console**: Menu interativo intuitivo
+
+### CRUD-JDBC com PreparedStatement
+- **PreparedStatement**: Segurança contra SQL Injection
+- **Padrão MVC**: Separação clara de responsabilidades
+- **Exercícios Práticos**: 15 exercícios de UPDATE e DELETE
+- **Múltiplas Tabelas**: 6 entidades diferentes para prática
+
+## Tecnologias Utilizadas
+
+- **Java 11+**
+- **Maven 3.6+**
+- **MySQL 8.0+**
+- **JDBC API**
+- **MySQL Connector/J 8.0.33**
+
+## Estrutura de Arquivos
+
+```
+ProgramacaoBackend/
+├── Sistema de logística e entregas/     # Sistema completo de logística
+├── Lista telefônica/                    # Sistema de lista telefônica
+├── CRUD - JDBC/                        # Exercícios práticos de JDBC
+├── README.md                           # Este arquivo
+├── INDEX.md                            # Índice de projetos
+├── INSTALL.md                          # Guia de instalação
+├── CHANGELOG.md                        # Histórico de mudanças
+├── CONTRIBUTING.md                     # Diretrizes de contribuição
+├── CODE_OF_CONDUCT.md                  # Código de conduta
+├── LICENSE                             # Licença do projeto
+├── pom.xml                             # Configuração Maven principal
+├── run.bat                             # Script de execução (Windows)
+└── run.sh                              # Script de execução (Linux/macOS)
 ```
 
-### Listar Usuários por Domínio
-```java
-List<UsuarioDAO.Usuario> usuarios = UsuarioDAO.listarPorDominio("@email.com");
-for (UsuarioDAO.Usuario usuario : usuarios) {
-    System.out.println(usuario);
-}
-```
+## Funcionalidades por Projeto
 
-### Contar Total de Usuários
-```java
-int total = UsuarioDAO.contarUsuarios();
-System.out.println("Total: " + total);
-```
+### 🚚 Sistema de Logística de Entregas
+- ✅ Cadastro de Clientes, Motoristas, Pedidos
+- ✅ Gestão de Entregas e Histórico
+- ✅ 16 Relatórios Analíticos
+- ✅ Validações de Dependência
+- ✅ Interface Completa
 
-## Características dos Exercícios
+### 📞 Sistema de Lista Telefônica
+- ✅ CRUD de Contatos
+- ✅ Busca por Nome
+- ✅ Interface Console
+- ✅ Estrutura POO
 
-- **PreparedStatement**: Todos os métodos utilizam PreparedStatement para segurança
-- **Tratamento de Erros**: Implementação robusta com try-catch e mensagens informativas
-- **Validação**: Verificação de linhas afetadas para confirmar operações
-- **Interface Amigável**: Menu interativo para testar todas as funcionalidades
-- **Código Limpo**: Implementação seguindo boas práticas de programação
-
-## Tabelas do Banco
-
-- **usuarios**: id, nome, email
-- **alunos**: id, nome, matricula, curso
-- **funcionarios**: id, nome, cargo, salario
-- **livros**: id, titulo, autor, ano_publicacao
-- **pedidos**: id, cliente, data_pedido, total
-- **produtos**: id, nome, preco, quantidade
-
-## Dados de Teste
-
-O sistema inclui dados de teste na tabela `usuarios` com 10 registros para prática das operações.
+### 💾 CRUD-JDBC com PreparedStatement
+- ✅ 6 Tabelas Diferentes
+- ✅ 15 Exercícios Práticos
+- ✅ Padrão MVC
+- ✅ PreparedStatement
 
 ## Contribuição
 
@@ -138,3 +225,9 @@ Siga as diretrizes do arquivo `CONTRIBUTING.md` para contribuir com o projeto.
 ## Licença
 
 Este projeto está licenciado sob a licença especificada no arquivo `LICENSE`.
+
+---
+
+**Desenvolvido por** CaduBraga  
+**Turma MIDS 77** - Curso de Desenvolvimento de Sistemas  
+**Professor**: Vinícius Trindade
