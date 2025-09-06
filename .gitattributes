@@ -1,6 +1,14 @@
+# Force language detection for specific file types
 *.sql linguist-language=SQL
-*.sql linguist-detectable=true
 *.bat linguist-language=Batchfile
-*.bat linguist-detectable=true
 *.sh linguist-language=Shell
+
+# Make these files detectable by linguist
+*.sql linguist-detectable=true
+*.bat linguist-detectable=true
 *.sh linguist-detectable=true
+
+# Ensure these files are counted in language statistics
+*.sql linguist-documentation=false
+*.bat linguist-documentation=false
+*.sh linguist-documentation=false

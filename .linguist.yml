@@ -1,0 +1,22 @@
+# Linguist configuration for GitHub language detection
+detectable:
+  - "*.sql"
+  - "*.bat"
+  - "*.sh"
+
+# Force specific language detection
+override:
+  "*.sql": SQL
+  "*.bat": Batchfile
+  "*.sh": Shell
+
+# Exclude from documentation
+documentation:
+  - "*.md"
+  - "*.txt"
+  - "LICENSE"
+  - "CHANGELOG.md"
+  - "CODE_OF_CONDUCT.md"
+  - "CONTRIBUTING.md"
+  - "INSTALL.md"
+  - "INDEX.md"
